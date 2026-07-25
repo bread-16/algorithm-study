@@ -1,0 +1,28 @@
+# ===== Java =====
+*.class
+*.jar
+*.war
+*.log
+bin/
+out/
+target/
+build/
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ===== Eclipse =====
+.classpath
+.project
+.settings/
+.metadata/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== macOS / Windows =====
+.DS_Store
+Thumbs.db
