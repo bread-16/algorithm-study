@@ -1,4 +1,4 @@
-package swea_1859;
+package dana.m07.swea;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
