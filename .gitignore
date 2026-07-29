@@ -27,3 +27,6 @@ module-info.java
 # ===== macOS / Windows =====
 .DS_Store
 Thumbs.db
+
+# ===== Build Tools =====
+pom.xml
