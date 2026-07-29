@@ -22,8 +22,8 @@ import java.util.StringTokenizer;
 public class D2_1954 {
 
 	// 우 하 좌 상 순서로 델타 배열 정의
-	private static final int[] dy = { 0, 1, 0, -1 };
-	private static final int[] dx = { 1, 0, -1, 0 };
+	private static final int[] dr = { 0, 1, 0, -1 };
+	private static final int[] dc = { 1, 0, -1, 0 };
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,48 +33,46 @@ public class D2_1954 {
 		int T = Integer.parseInt(st.nextToken()); // 테케 수 입력
 
 		int N; // 달팽이의 크기
-		int[][] snail;
-		int dir;
-		int idy;
-		int idx;
-		int num; // 수
-		int sanghan; // 방향 트는 타이밍 변수
+		int[][] snail; // 저장할 배열
+		int dir; // dr, dc의 방향 결정 변수
+		int idr; // 델타 배열값을 더한 행 변수
+		int idc; // 델타 배열값을 더한 열 변수
+		int r; // 행(세로 순회 변수)
+		int c; // 열(가로 순회 변수)
 
 		for (int tc = 1; tc <= T; tc++) {
 			sb = new StringBuilder();
 			sb.append("#").append(tc).append("\n");
 
-			dir = 0;
-			num = 1;
-			
+			dir = 0; // 방향 처음은 오른쪽으로 시작
+			r = 0; // 델타 배열 dr[0] == 0 이므로 초기값 0 되게 설정
+			c = -1; // 델타 배열 dc[0] == -1 이므로 초기값 0 되게 설정
+
 			st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
-			if (N == 1) {
-				sb.append(1);
-				System.out.print(sb);
-				continue;
-			}
-			sanghan = N;
 
 			snail = new int[N][N];
+			for (int i = 1; i <= N * N; i++) {
+				idr = r + dr[dir];
+				idc = c + dc[dir];
+				if (0 <= idr && idr < N && 0 <= idc && idc < N && snail[idr][idc] == 0) {
+					snail[idr][idc] = i;
+					// 위치를 델타 배열 크기만큼 이동
+					r = idr;
+					c = idc;
+				} else {
+					dir = (dir + 1) % 4; // 0 1 2 3만 돌게 하도록 모듈러 연산
+					i--; // 방향 전환할 경우 i증가 철회
+				}
+			}
+
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
-					idy = i + dy[dir]; 
-					idx = j + dx[dir];
-					if (0 <= idy && idy < sanghan && 0 <= idx && idx < sanghan) { 
-						snail[idy][idx] = num++;
-						sb.append(snail[idy][idx]).append(" ");			
-					} else { // 방향 트는 조건: 범위 상한까지 갔을때, 다음 값이 0이 아니면 
-						dir = (dir++) % 4;	
-					}
+					sb.append(snail[i][j]).append(" ");
 				}
-				
 				sb.append("\n");
 			}
-			
 			System.out.print(sb);
-		} // for tc END
-
-	}
-
+		} // for tc end
+	} // main end
 }
