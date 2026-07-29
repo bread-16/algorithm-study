@@ -1,5 +1,5 @@
-
-/*
+/* 
+ * SWEA D2_1954. 달팽이 숫자
  * 실행시간: ms
  * 메모리: KB
  * 시간 복잡도: O()
@@ -12,6 +12,7 @@
    * 2차원 배열 탐색은 델타 배열 활용 생각하기
    * 처음부터 깔끔하게 풀려고 하니 복잡해진 느낌임
  */
+package giseon.m07.swea;
 
 import java.io.BufferedReader;
 import java.io.IOException;
