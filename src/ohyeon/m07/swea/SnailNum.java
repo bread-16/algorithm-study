@@ -1,6 +1,5 @@
 package ohyeon.m07.swea;
 
-import java.util.*;
 import java.io.*;
 
 class SnailNum
