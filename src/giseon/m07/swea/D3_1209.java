@@ -1,6 +1,7 @@
 /*
  * 실행시간: 141 ms
  * 메모리: 37,480 kb
+ * 시간 복잡도 : O(N^2)
  * 전략
    * 2차원 배열의 행, 열, 대각 합을 순회하면서 구함
    * 행은 한 줄 입력마다 합을 구하면서 max 확인
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class D2_1209 {
+public class D3_1209 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
