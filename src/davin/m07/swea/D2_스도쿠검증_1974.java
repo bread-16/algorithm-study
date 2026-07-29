@@ -5,48 +5,25 @@ import java.io.*;
 
 public class D2_스도쿠검증_1974 {
 	static boolean isSudoku(int[][] nums) {
-		// count를 boolean check로 변경
-		// 행 체크
-		for (int i = 0; i < 9; i++) {
-			boolean[] check = new boolean[10];
-			for (int j = 0; j < 9; j++) {
-				int v = nums[i][j];
-				if (check[v])
-					return false;
-				check[v] = true;
-			}
-		}
+		// 칸 하나를 방문할 때, 그 칸이 속한 행/열/박스를 한 번에 다 체크
+		boolean[][] row = new boolean[9][10];
+	    boolean[][] col = new boolean[9][10];
+	    boolean[][] box = new boolean[9][10];
 
-		// 열 체크
-		for (int i = 0; i < 9; i++) {
-			boolean[] check = new boolean[10];
-			for (int j = 0; j < 9; j++) {
-				int v = nums[j][i];
-				if (check[v])
-					return false;
-				check[v] = true;
-			}
-		}
+	    for (int i = 0; i < 9; i++) {
+	        for (int j = 0; j < 9; j++) {
+	            int v = nums[i][j];
+	            int b = (i / 3) * 3 + (j / 3);
 
-		// 3*3 체크
-		for (int box = 0; box < 9; box++) {
-			boolean[] check = new boolean[10];
-			int startX = (box / 3) * 3;
-			int startY = (box % 3) * 3;
+	            if (row[i][v] || col[j][v] || box[b][v]) return false;
 
-			for (int cell = 0; cell < 9; cell++) {
-				int x = startX + cell / 3;
-				int y = startY + cell % 3;
-				int v = nums[x][y];
+	            row[i][v] = true;
+	            col[j][v] = true;
+	            box[b][v] = true;
+	        }
+	    }
 
-				if (check[v])
-					return false;
-				check[v] = true;
-			}
-		}
-
-		// 위 체크했는데 다 해당 안되면 스도쿠임
-		return true;
+	    return true;
 	}
 
 	public static void main(String[] args) throws Exception {
