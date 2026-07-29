@@ -27,30 +27,53 @@ public class D2_1954 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb;
 
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int T = Integer.parseInt(st.nextToken());
+		int T = Integer.parseInt(st.nextToken()); // 테케 수 입력
 
 		int N; // 달팽이의 크기
-		int[] snail;
+		int[][] snail;
+		int dir;
+		int idy;
+		int idx;
+		int num; // 수
+		int sanghan; // 방향 트는 타이밍 변수
 
 		for (int tc = 1; tc <= T; tc++) {
+			sb = new StringBuilder();
+			sb.append("#").append(tc).append("\n");
+
+			dir = 0;
+			num = 1;
+			
 			st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
 			if (N == 1) {
-				System.out.print(1);
+				sb.append(1);
+				System.out.print(sb);
 				continue;
 			}
+			sanghan = N;
 
-			snail = new int[N * N];
-			for (int i = 0; i < N * N; i++) {
-
+			snail = new int[N][N];
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < N; j++) {
+					idy = i + dy[dir]; 
+					idx = j + dx[dir];
+					if (0 <= idy && idy < sanghan && 0 <= idx && idx < sanghan) { 
+						snail[idy][idx] = num++;
+						sb.append(snail[idy][idx]).append(" ");			
+					} else { // 방향 트는 조건: 범위 상한까지 갔을때, 다음 값이 0이 아니면 
+						dir = (dir++) % 4;	
+					}
+				}
+				
+				sb.append("\n");
 			}
-
-//			sb.append("#").append(tc).append("\n").append(answer).append;
+			
 			System.out.print(sb);
-		} // for (tc) END
+		} // for tc END
 
 	}
 
