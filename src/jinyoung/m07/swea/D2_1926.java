@@ -14,12 +14,14 @@ public class D2_1926 {
 		for(int i=1;i<=n;i++) {
 			cnt=0;
 			k=i;
+			// 10으로 나눈 나머지가 3일 때 cnt++ -> k>1일 때
 			while(k>=1) {
 				if((k%10)%3==0 && k%10!=0) {
 					cnt++;
 				}
 				k/=10;
 			}
+			// cnt switch문, sb로 추가
 			switch(cnt) {
 			case 0:
 				sb.append(i);
