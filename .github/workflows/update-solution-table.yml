@@ -34,11 +34,13 @@ jobs:
             const issueMatch = body.match(
               /^-\s*Issue Number\s*:\s*#(\d+)\s*$/mi,
             );
+            const executionTime = getField("실행시간");
             const timeComplexity = getField("시간 복잡도");
             const memory = getField("메모리");
 
             const missing = [];
             if (!issueMatch) missing.push("Issue Number");
+            if (!executionTime) missing.push("실행시간");
             if (!timeComplexity) missing.push("시간 복잡도");
             if (!memory) missing.push("메모리");
 
@@ -89,11 +91,12 @@ jobs:
             const endMarker = "<!-- solution-table:end -->";
             const rowMarker = `<!-- solution-pr:${pr.number} -->`;
             const tableHeader = [
-              "| 제출자 | 시간 복잡도 | 메모리 사용량 | PR |",
-              "| --- | --- | --- | --- |",
+              "| 제출자 | 실행시간 | 시간 복잡도 | 메모리 사용량 | PR |",
+              "| --- | --- | --- | --- | --- |",
             ];
             const row = [
               `| [@${pr.user.login}](${pr.user.html_url})`,
+              escapeCell(executionTime),
               escapeCell(timeComplexity),
               escapeCell(memory),
               `[#${pr.number}](${pr.html_url}) ${rowMarker} |`,
@@ -129,6 +132,9 @@ jobs:
 
               if (lines.length < 2) {
                 lines = [...tableHeader];
+              } else {
+                lines[0] = tableHeader[0];
+                lines[1] = tableHeader[1];
               }
 
               const existingRow = lines.findIndex((line) =>
