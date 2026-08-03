@@ -1,8 +1,6 @@
 package jaewon.m08.programmers;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 // 풀이 시간: 30분
 // 실행 속도: 0.02ms
 // 메모리: 81.8MB
