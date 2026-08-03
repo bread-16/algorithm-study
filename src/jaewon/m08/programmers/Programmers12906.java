@@ -5,17 +5,17 @@ import java.util.*;
 public class Programmers12906 {
 
 	public int[] solution(int[] arr) {
-        Deque<Integer> stack = new ArrayDeque<>();
+        Deque<Integer> dq = new ArrayDeque<>();
 
         for (int num : arr) {
-            if (stack.isEmpty() || stack.peekLast() != num) {
-                stack.addLast(num);
+            if (dq.isEmpty() || dq.peekLast() != num) {
+                dq.addLast(num);
             }
         }
 
-        int[] answer = new int[stack.size()];
+        int[] answer = new int[dq.size()];
         int idx = 0;
-        for (int num : stack) { 
+        for (int num : dq) { 
             answer[idx++] = num;
         }
         return answer;
