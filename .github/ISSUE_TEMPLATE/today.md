@@ -7,3 +7,10 @@ assignees: ""
 ---
 
 ### 링크
+
+### 제출 현황
+
+<!-- solution-table:start -->
+| 제출자 | 실행시간 | 시간 복잡도 | 메모리 사용량 | PR |
+| --- | --- | --- | --- | --- |
+<!-- solution-table:end -->
