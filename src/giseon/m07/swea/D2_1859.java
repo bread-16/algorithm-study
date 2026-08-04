@@ -14,6 +14,7 @@ SWEA D2_1859. 백만 장자 프로젝트
 	- 누적된 이익을 출력하고 다음 테스트케이스가 있으면 위를 반복한다.
 	(다음 테스트케이스 때 같은 변수를 쓰면 초기화 필수)
 */
+package giseon.m07.swea;
 
 import java.io.BufferedReader;
 import java.io.IOException;
