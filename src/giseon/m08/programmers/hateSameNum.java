@@ -1,5 +1,6 @@
 import java.util.*;
 
+// 프로그래머스 스택/큐 - 같은 숫자는 싫어
 public class hateSameNum {
     public int[] solution(int[] arr) {
         int[] answer;
