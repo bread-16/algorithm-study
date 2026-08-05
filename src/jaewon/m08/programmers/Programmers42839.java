@@ -9,10 +9,10 @@ public class Programmers42839 {
 	private boolean[] used;
 	private final Set<Integer> candidates = new HashSet<>(); // 숫자가 중복을 방지하기 위해 set으로 받음
 
-	public int solution(String numbers) {
+public int solution(String numbers) {
+		candidates.clear();
 		pieces = numbers.toCharArray();
 		used = new boolean[pieces.length];
-
 		dfs(0, "");
 
 		int answer = 0;
