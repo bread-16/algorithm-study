@@ -48,7 +48,7 @@ public class 농작물수확하기 {
 		}
 		r = 1;
 		c = N / 2;
-
+		//시작지점 -> [1,N/2]
 		for (int i = 0; i < N / 2; i++) {
 			for (int j = 0; j < N / 2; j++) {
 				sum += array[r + j][c - j];
