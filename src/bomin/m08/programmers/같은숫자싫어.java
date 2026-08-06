@@ -1,0 +1,27 @@
+package bomin.m08.programmers;
+
+import java.util.Stack;
+
+public class 같은숫자싫어 {
+	 public int[] solution(int []arr) {
+	        int[] answer = {};
+	        Stack<Integer> stack = new Stack<>();
+	        
+	        for(int i=0; i<arr.length;i++){
+	            if(!stack.isEmpty()){
+	                if(stack.peek() != arr[i])
+	                    stack.push(arr[i]);
+	            }
+	            else{
+	                stack.push(arr[i]);
+	            }
+	        }
+	        answer = new int[stack.size()];
+	        
+	        for(int i= answer.length -1; i>=0; i--){
+	            answer[i] = stack.pop();
+	        }
+
+	        return answer;
+	    }
+}
