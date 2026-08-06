@@ -12,8 +12,8 @@ public class 모음사전 {
     }
 
     void dfs(String current) {
+    	if (current.length() > 0) list.add(current);
         if (current.length() == 5) return;
-        if (current.length() > 0) list.add(current);
         
         for (char c : vowels) {
             dfs(current + c);
