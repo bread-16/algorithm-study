@@ -1,24 +1,24 @@
 package jinwoo.m08.programmers;
 
 public class Fatigue {
-	
+
 	static boolean[] visited;
 	static int clearNum;
 	static int maxClearNum;
-	
+
 	public int solution(int k, int[][] dungeons) {
-		
+
 		visited = new boolean[dungeons.length];
-		
+
 		clearNum = 0;
 		maxClearNum = 0;
-		
+
 		dfs(0, k, dungeons);
-		
-        int answer = maxClearNum;
-        return answer;
-    }
-	
+
+		int answer = maxClearNum;
+		return answer;
+	}
+
 	public void dfs(int depth, int remainFatigue, int[][] dungeons) {
 		
 		if(depth == visited.length) {
@@ -51,4 +51,7 @@ public class Fatigue {
 			
 		}
 	}
-}
+
+	}
+
+
