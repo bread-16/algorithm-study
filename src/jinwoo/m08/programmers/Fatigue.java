@@ -20,38 +20,37 @@ public class Fatigue {
 	}
 
 	public void dfs(int depth, int remainFatigue, int[][] dungeons) {
-		
-		if(depth == visited.length) {
+
+		if (depth == visited.length) {
 			maxClearNum = Math.max(maxClearNum, clearNum);
 			return;
 		}
-		
-		for(int i=0; i<dungeons.length; i++) {
-			
-			if(visited[i]) continue;
-			
+
+		for (int i = 0; i < dungeons.length; i++) {
+
+			if (visited[i])
+				continue;
+
 			visited[i] = true;
-			
+
 			int beforeFatigue = remainFatigue;
-			
-			if(remainFatigue >= dungeons[i][0]) {
+
+			if (remainFatigue >= dungeons[i][0]) {
 				remainFatigue -= dungeons[i][1];
 				clearNum++;
 			}
-			
-			dfs(depth+1, remainFatigue, dungeons);
-			
+
+			dfs(depth + 1, remainFatigue, dungeons);
+
 			remainFatigue = beforeFatigue;
-			
-			if(remainFatigue >= dungeons[i][0]) {
+
+			if (remainFatigue >= dungeons[i][0]) {
 				clearNum--;
 			}
-			
+
 			visited[i] = false;
-			
+
 		}
 	}
 
-	}
-
-
+}
