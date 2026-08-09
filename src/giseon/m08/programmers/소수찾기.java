@@ -1,3 +1,5 @@
+package giseon.m08.programmers;
+
 import java.util.HashSet;
 
 class 소수찾기 {

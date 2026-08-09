@@ -1,3 +1,5 @@
+package giseon.m08.programmers;
+
 class 피로도 {
     int[][] dungeons; // 던전 배열 매개변수로 주지 않고 멤버에서 지속 참조
     static boolean[] visited; // 방문 여부
