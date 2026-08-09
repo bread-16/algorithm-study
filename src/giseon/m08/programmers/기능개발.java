@@ -1,4 +1,5 @@
-import java.util.*;
+package giseon.m08.programmers;
+
 
 // 0.04ms, 80.5MB
 class 기능개발 {
