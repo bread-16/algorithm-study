@@ -9,7 +9,7 @@ public class Programmers12906 {
         List<Integer> answer = new ArrayList<>(); 
                 
         for (int n : arr) {
-            // 아무것도 없으면 숫자 넣기 
+            // 아무것도 없으면 숫자 넣기 !
             if (answer.isEmpty()) {
                 answer.add(n); 
             }
