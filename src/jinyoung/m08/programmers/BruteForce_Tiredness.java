@@ -1,6 +1,6 @@
 package jinyoung.m08.programmers;
 
-class Solution {
+class Tiredness {
     public static boolean[] visited;
     public static int answer=0;
     public int solution(int k, int[][] dungeons) {
