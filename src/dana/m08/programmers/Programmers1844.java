@@ -35,9 +35,15 @@ public class Programmers1844 {
                 if (maps[nr][nc] == 0) {
                     continue; 
                 }
-                // 처음 방문하는 길인 경우 최단 거리 갱신 및 큐에 추가
+                // 처음 방문하는 길인 경우...
                 if (maps[nr][nc] == 1) {
+                	// 최단 거리 갱신 
                     maps[nr][nc] = maps[x][y] + 1; 
+                    // 만약 nr, nc가 목적지라면, break
+                    if (nr == n - 1 && nc == m - 1) {
+                    	break; 
+                    }
+                    // 큐에 추가 
                     queue.offer(new int[]{nr, nc});
                 }
             }
