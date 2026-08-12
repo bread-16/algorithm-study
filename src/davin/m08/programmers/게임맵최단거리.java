@@ -22,9 +22,6 @@ public class 게임맵최단거리 {
 			int y = cur[1];
 
 			for (int i = 0; i < 4; i++) {
-				if (x == n - 1 && y == m - 1)
-					return distance[x][y];
-
 				int nx = x + dx[i];
 				int ny = y + dy[i];
 
@@ -38,6 +35,9 @@ public class 게임맵최단거리 {
 				q.offer(new int[] { nx, ny });
 				distance[nx][ny] = distance[x][y] + 1;
 			}
+			
+			if (x == n - 1 && y == m - 1)
+				return distance[x][y];
 		}
 		return -1;
 	}
