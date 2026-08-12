@@ -40,14 +40,6 @@ public class 다리를지나는트럭 {
 			} else {
 				sec++;
 			}
-
-//			if (sec > bridge.peek()[1] + bridge_length) {
-//				// 시간이 지났다면 다리에서 트럭 제거, 무게 및 대수 낮추기
-//				brWeight -= bridge.poll()[0];
-//				brCount--;
-//			}
-//순서가 다리에 있는 트럭을 빼고 -> 다음 트럭을 넣어야하는데, 이게 밑으로 갔을때 순서대로 안되서 옮김.
-
 		}
 
 		return sec;
