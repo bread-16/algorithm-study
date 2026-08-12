@@ -3,7 +3,7 @@ package jinyoung.m08.programmers;
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class PrimeNumber {
     
     public static int[] arr;
 	public static boolean[] visited;
