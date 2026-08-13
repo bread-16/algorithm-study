@@ -1,4 +1,4 @@
-package giseon.m08;
+package giseon.m08.programmers;
 
 // 0.02ms, 83.5MB
 class 네트워크 {

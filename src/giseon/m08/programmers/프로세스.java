@@ -3,7 +3,7 @@ package giseon.m08.programmers;
 import java.util.*;
 
 // 0.47ms, 90.4MB
-class Solution {
+class 프로세스 {
     public int solution(int[] priorities, int location) {
         int answer = 0;
         Deque<int[]> q = new ArrayDeque<>();

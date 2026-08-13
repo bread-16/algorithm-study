@@ -1,5 +1,7 @@
 package giseon.m08.programmers;
 
+import java.util.*;
+
 // 0.04ms, 80.5MB
 class 기능개발 {
     public int[] solution(int[] progresses, int[] speeds) {
