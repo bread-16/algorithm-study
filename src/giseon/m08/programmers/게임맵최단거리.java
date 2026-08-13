@@ -1,4 +1,4 @@
-package giseon.m08;
+package giseon.m08.programmers;
 
 import java.util.*;
 
