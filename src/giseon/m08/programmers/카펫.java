@@ -2,7 +2,7 @@ package giseon.m08.programmers;
 
 import java.util.*;
 
-class Solution {
+class 카펫 {
     public int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
         List<Integer> nums = new ArrayList<>(); // 약수 담을 리스트
