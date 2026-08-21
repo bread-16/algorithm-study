@@ -2,6 +2,7 @@ package dana.m07.swea;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class 보급로 {
@@ -32,6 +33,12 @@ public class 보급로 {
 			
 			// 최단 거리를 저장할 배열 
 			int[][] distance = new int[N][N]; 
+			
+			// 다 INF로 초기화 하기 
+			int INF = Integer.MAX_VALUE; 
+			for (int i = 0; i < N; i++) {
+				Arrays.fill(distance[i], INF);
+			}
 			
 			// 다익스트라를 위한 priority queue 
 			// {가중치, row, col}
@@ -78,11 +85,7 @@ public class 보급로 {
 			}
 			
 			// 답 출력 
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) {
-					System.out.println("#" + test_case + " " + distance[i][j]);  
-				}
-			}			
+			System.out.println("#" + test_case + " " + distance[N-1][N-1]);  
 		}
 	}
 }
