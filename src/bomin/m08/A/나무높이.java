@@ -1,4 +1,4 @@
-package bomin.m08.swea;
+package bomin.m08.A;
 
 import java.io.BufferedReader;
 import java.io.IOException;
