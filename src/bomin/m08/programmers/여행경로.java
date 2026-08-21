@@ -6,7 +6,7 @@ public class 여행경로 {
 	// 방문 경우의 수 -> dfs, 출력 시 오름차순.
 	// 모든 티켓 사용 -> depth = tickets.length;
 	// 시작값 넣고 dfs -> 다음 값을 리스트에 넣음. 그리고 백트래킹 해야할듯.
-	// depth== tickets.length일때 리스트를 배열로 변경 후 반환. 배열이 여러개 일 지는 어떻게 확인하지? 이차원배열?
+	// depth== tickets.length일때 리스트를 반환?
 	String[][] tickets;
 	ArrayList<ArrayList<String[]>> pathList;
 	boolean[] visited;
@@ -22,8 +22,9 @@ public class 여행경로 {
 		dfs(0, null);
 		// pathList에 경로가 2개 이상일 경우 오름차순으로 경로 리턴
 		pathList.sort((p1, p2) -> {
+			//시작 공항 비교
+			int compare = p1.get(0)[0].compareTo(p2.get(0)[0]);
 			for (int i = 0; i < p1.size(); i++) {
-				int compare = p1.get(0)[0].compareTo(p2.get(0)[0]);
 				
 				if(compare != 0) {
 					return compare;
@@ -64,6 +65,7 @@ public class 여행경로 {
 				continue;
 
 			if (currentAirport != null && !currentAirport.equals(tickets[i][0])) {
+				//시작값이 null이거나 다음 경로가 이어지지 않으면 continue
 				continue;
 			}
 			path.add(tickets[i]);
