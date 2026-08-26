@@ -24,6 +24,8 @@ public class hunter {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine().trim());
+        
+        StringBuilder sb = new StringBuilder();
 
         for (int tc = 1; tc <= T; tc++) {
             N = Integer.parseInt(br.readLine().trim());
@@ -54,10 +56,10 @@ public class hunter {
             // 헌터는 항상 (0, 0) 위치에서 출발
             // dfs(현재 행, 현재 열, 누적 이동 거리, 완료한 타겟 수)
             dfs(0, 0, 0, 0);
-
-            // 결과 출력
-            System.out.println("#" + tc + " " + minDistance);
+            sb.append("#").append(tc).append(" ").append(minDistance).append("\n");
+           
         }
+        System.out.print(sb);
     }
 
     static void dfs(int currentR, int currentC, int dist, int count) {
