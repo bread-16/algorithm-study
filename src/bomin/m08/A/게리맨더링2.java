@@ -49,6 +49,7 @@ public class 게리맨더링2 {
 			dfs(1, 0, i);
 
 		}
+		System.out.println(answer == Integer.MAX_VALUE ? -1 : answer);
 
 	}
 
