@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class SWEA2001 {
 	static int flySwatter;
-	static int[][] arr;
+	static int[][] flyArr;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -22,13 +22,13 @@ public class SWEA2001 {
 			int arrLen = Integer.parseInt(arrSt.nextToken());
 			flySwatter = Integer.parseInt(arrSt.nextToken());
 			
-			arr = new int[arrLen][arrLen];
+			flyArr = new int[arrLen][arrLen];
 			
 			for(int i=0; i<arrLen; i++) {
 				String flyNum = in.readLine().trim();
 				StringTokenizer fSt = new StringTokenizer(flyNum);
 				for(int j=0; j<arrLen; j++) {
-					arr[i][j] = Integer.parseInt(fSt.nextToken());
+					flyArr[i][j] = Integer.parseInt(fSt.nextToken());
 				}
 			}
 			
@@ -53,7 +53,7 @@ public class SWEA2001 {
 		
 		for(int i=r; i<r+flySwatter; i++) {
 			for(int j=c; j<c+flySwatter; j++) {
-				cnt += arr[i][j];
+				cnt += flyArr[i][j];
 			}
 		}
 		
