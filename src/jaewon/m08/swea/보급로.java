@@ -45,6 +45,7 @@ public class 보급로 {
 				String line = in.readLine();
 				for (int j = 0; j < N; j++) {
 					map[i][j] = line.charAt(j) - '0';
+					
 				}
 			}
 			// 가중치 맵 채우기
