@@ -19,9 +19,6 @@ public class swea1233 {
                 	if (!(mid.equals("+") || mid.equals("-") || mid.equals("*") || mid.equals("/"))) {
                     	check = 0;
                 	}
-                	while (st.hasMoreTokens()) {
-                        st.nextToken();
-                    }
             	} else {
            			if (mid.equals("+") || mid.equals("-") || mid.equals("*") || mid.equals("/")) {
                     	check = 0;
