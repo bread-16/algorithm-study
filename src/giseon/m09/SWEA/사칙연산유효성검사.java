@@ -1,4 +1,4 @@
-package giseon.m09.A;
+package giseon.m09.SWEA;
 
 import java.io.*;
 
