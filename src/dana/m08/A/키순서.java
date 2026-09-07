@@ -66,7 +66,7 @@ public class 키순서 {
 		// start넣어주기 
 		stack.add(start); 
 		visited[start] = true; 
-		
+
 		int count = 0; 
 		while(!stack.isEmpty()) {
 			int current = stack.pop();
