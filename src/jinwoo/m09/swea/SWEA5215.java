@@ -10,7 +10,6 @@ public class SWEA5215 {
 	static Ingredient[] ingredients;
 	static int ingredientNum;
 	static int maxCalories;
-	static boolean[] visited;
 	
 	static int answer;
 	
@@ -45,31 +44,25 @@ public class SWEA5215 {
 				
 				ingredients[i] = new Ingredient(p, c);
 			}
-			
-			visited = new boolean[ingredientNum];
 			answer = 0;
 			
-			dfs(0, 0, 0, 0);
+			dfs(0, 0, 0);
 			
 			sb.append("#").append(t+1).append(" ").append(answer).append("\n");
 		}
 		System.out.println(sb);
 	}
 	
-	static public void dfs(int start, int depth, int preference, int calories) {
+	static public void dfs(int start, int preference, int calories) {
 		if(calories > maxCalories) return;
 		if(preference > answer) answer = preference;
-		if(depth == ingredientNum) return;
+		
 		
 		for(int i=start; i<ingredientNum; i++) {
-			if(visited[i]) continue;
 			
-			visited[i] = true;
 			Ingredient ig = ingredients[i];
 			
-			dfs(i+1, depth+1, preference+ig.preference, calories+ig.calories);
-			
-			visited[i] = false;
+			dfs(i+1, preference+ig.preference, calories+ig.calories);
 			
 		}
 	}
