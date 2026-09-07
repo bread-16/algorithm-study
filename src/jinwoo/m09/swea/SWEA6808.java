@@ -3,8 +3,6 @@ package jinwoo.m09.swea;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class SWEA6808 {
@@ -12,7 +10,6 @@ public class SWEA6808 {
 	static int[] userA;
 	static int[] userB;
 	static boolean[] visited;
-	static List<Integer> randomB;
 	static int winNum;
 	static int loseNum;
 	
@@ -41,32 +38,19 @@ public class SWEA6808 {
 				 }
 			 }
 			 
-			 randomB = new ArrayList<>();
 			 visited = new boolean[10];
 			 
-			 randomB.add(0);
 			 winNum = 0;
 			 loseNum = 0;
-			 dfs(0);
+			 dfs(0, 0, 0);
 			 
 			 sb.append("#").append(t+1).append(" ").append(winNum).append(" ").append(loseNum).append("\n");
 		 }
 		 System.out.println(sb);
 	}
 	
-	static public void dfs(int depth) {
+	static public void dfs(int depth, int aScore, int bScore) {
 		if(depth == 9) {
-			
-			int aScore = 0;
-			int bScore = 0;
-			
-			for(int i=1; i<10; i++) {
-				if(userA[i] > randomB.get(i)) {
-					aScore += (userA[i] + randomB.get(i)); 
-				} else {
-					bScore += (userA[i] + randomB.get(i)); 
-				}
-			}
 			
 			if(aScore > bScore) {
 				winNum++;
@@ -81,11 +65,15 @@ public class SWEA6808 {
 			if(visited[i])continue;
 			
 			visited[i] = true;
-			randomB.add(userB[i]);
 			
-			dfs(depth+1);
+			int sum = userA[depth+1] + userB[i];
 			
-			randomB.remove(randomB.size()-1);
+			if(userA[depth+1] > userB[i]) {
+				dfs(depth+1, aScore+sum, bScore);
+			} else {
+				dfs(depth+1, aScore, bScore+sum);
+			}
+
 			visited[i] = false;
 		}
 	}
