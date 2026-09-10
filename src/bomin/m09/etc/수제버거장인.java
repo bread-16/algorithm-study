@@ -42,19 +42,20 @@ public class 수제버거장인 {
 			count++;
 			return;
 		}
+		//다음 숫자 안넣기
+		dfs(depth+1);
 		
 		//다음 숫자 넣기
 		for(int number : ingredients) {
 			if(ban[number][depth+1]) {
 				flag = false;
+				break;
 			}
 		}
-		if(!flag) {
+		if(flag) {
 			ingredients.add(depth+1);
 			dfs(depth+1);
 			ingredients.remove(ingredients.size()-1);
 		}
-		//다음 숫자 안넣기
-		dfs(depth+1);
 	}
 }
